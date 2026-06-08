@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia del Club Deportivo Toluca</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #c8102e;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #c8102e;
+        }
+
+        .dato {
+            background-color: #ffe6e6;
+            border-left: 5px solid #c8102e;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        ul {
+            line-height: 1.8;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Club Deportivo Toluca</h1>
+    <p>Historia de los Diablos Rojos</p>
+</header>
+
+<main>
+
+    <h2>Fundación</h2>
+    <p>
+        El Club Deportivo Toluca fue fundado el 12 de febrero de 1917 en la ciudad de Toluca,
+        Estado de México. Es uno de los equipos con más tradición en el fútbol mexicano y ha
+        sido protagonista de importantes momentos en la historia de este deporte.
+    </p>
+
+    <h2>Primeros Años</h2>
+    <p>
+        Durante sus primeros años, el equipo participó en competencias regionales y poco a poco
+        fue creciendo hasta convertirse en una institución reconocida a nivel nacional. Su ingreso
+        a la Primera División marcó el inicio de una etapa de desarrollo y consolidación.
+    </p>
+
+    <div class="dato">
+        <strong>Dato curioso:</strong> El apodo de "Diablos Rojos" proviene del color rojo de su uniforme,
+        que se convirtió en una de las características más representativas del club.
+    </div>
+
+    <h2>Los Primeros Campeonatos</h2>
+    <p>
+        Toluca obtuvo sus primeros títulos de liga en las temporadas 1966-67 y 1967-68,
+        consolidándose como uno de los equipos más fuertes del fútbol mexicano.
+    </p>
+
+    <h2>La Época Dorada</h2>
+    <p>
+        Entre finales de los años noventa y principios de los años dos mil, el club vivió una de
+        las mejores etapas de su historia. Con jugadores destacados y un estilo ofensivo,
+        conquistó varios campeonatos y se convirtió en uno de los equipos más exitosos del país.
+    </p>
+
+    <h2>Jugadores Históricos</h2>
+    <ul>
+        <li>José Saturnino Cardozo</li>
+        <li>Antonio Naelson "Sinha"</li>
+        <li>Vicente Sánchez</li>
+        <li>Hernán Cristante</li>
+        <li>Cristian Morales</li>
+    </ul>
+
+    <h2>Estadio Nemesio Diez</h2>
+    <p>
+        El club juega sus partidos como local en el Estadio Nemesio Diez, uno de los recintos
+        deportivos más emblemáticos de México. Este estadio ha sido sede de numerosos encuentros
+        históricos y celebraciones de campeonatos.
+    </p>
+
+    <h2>Palmarés</h2>
+    <p>
+        Toluca es uno de los clubes más ganadores de México, con múltiples campeonatos de Liga MX,
+        además de otros títulos nacionales que respaldan su grandeza dentro del fútbol mexicano.
+    </p>
+
+    <div class="dato">
+        <strong>Orgullo Escarlata:</strong> Toluca es considerado uno de los equipos más importantes
+        y tradicionales del fútbol mexicano gracias a su historia, afición y logros deportivos.
+    </div>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 - Historia del Club Deportivo Toluca</p>
+</footer>
+
+</body>
+</html>
