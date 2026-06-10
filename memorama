@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memorama Ternurines</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg,#ffd6ec,#ffe8c7);
+        text-align:center;
+        margin:0;
+        padding:20px;
+    }
+
+    h1{
+        color:#ff4f9a;
+    }
+
+    #game{
+        display:grid;
+        grid-template-columns: repeat(4, 100px);
+        gap:10px;
+        justify-content:center;
+        margin-top:20px;
+    }
+
+    .card{
+        width:100px;
+        height:100px;
+        background:#ff7eb9;
+        border-radius:15px;
+        cursor:pointer;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size:40px;
+        color:transparent;
+        transition:0.3s;
+        box-shadow:0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .card.flipped{
+        background:white;
+        color:black;
+    }
+
+    .card.matched{
+        background:#c8ffd4;
+        cursor:default;
+    }
+
+    #mensaje{
+        margin-top:20px;
+        font-size:22px;
+        color:#ff4f9a;
+        font-weight:bold;
+    }
+
+    button{
+        margin-top:15px;
+        padding:10px 20px;
+        border:none;
+        border-radius:10px;
+        background:#ff4f9a;
+        color:white;
+        font-size:16px;
+        cursor:pointer;
+    }
+</style>
+</head>
+<body>
+
+<h1>💖 Memorama de Ternurines 💖</h1>
+
+<div id="game"></div>
+
+<div id="mensaje"></div>
+
+<button onclick="iniciarJuego()">🔄 Reiniciar</button>
+
+<script>
+const personajes = [
+    "🐰","🐰",
+    "🐻","🐻",
+    "🐱","🐱",
+    "🐶","🐶",
+    "🦊","🦊",
+    "🐼","🐼",
+    "🐹","🐹",
+    "🦁","🦁"
+];
+
+let primeraCarta = null;
+let segundaCarta = null;
+let bloqueo = false;
+let parejas = 0;
+
+const tablero = document.getElementById("game");
+
+function mezclar(array){
+    return array.sort(() => Math.random() - 0.5);
+}
+
+function iniciarJuego(){
+    tablero.innerHTML = "";
+    document.getElementById("mensaje").textContent = "";
+    primeraCarta = null;
+    segundaCarta = null;
+    bloqueo = false;
+    parejas = 0;
+
+    const cartas = mezclar([...personajes]);
+
+    cartas.forEach(simbolo => {
+        const carta = document.createElement("div");
+        carta.classList.add("card");
+        carta.dataset.simbolo = simbolo;
+        carta.textContent = simbolo;
+
+        carta.addEventListener("click", () => voltearCarta(carta));
+
+        tablero.appendChild(carta);
+    });
+}
+
+function voltearCarta(carta){
+
+    if(
+        bloqueo ||
+        carta.classList.contains("flipped") ||
+        carta.classList.contains("matched")
+    ){
+        return;
+    }
+
+    carta.classList.add("flipped");
+
+    if(!primeraCarta){
+        primeraCarta = carta;
+        return;
+    }
+
+    segundaCarta = carta;
+    bloqueo = true;
+
+    if(
+        primeraCarta.dataset.simbolo ===
+        segundaCarta.dataset.simbolo
+    ){
+        primeraCarta.classList.add("matched");
+        segundaCarta.classList.add("matched");
+
+        parejas++;
+
+        primeraCarta = null;
+        segundaCarta = null;
+        bloqueo = false;
+
+        if(parejas === 8){
+            document.getElementById("mensaje").textContent =
+                "🎉 ¡Ganaste el memorama de Ternurines! 🎉";
+        }
+
+    } else {
+
+        setTimeout(() => {
+            primeraCarta.classList.remove("flipped");
+            segundaCarta.classList.remove("flipped");
+
+            primeraCarta = null;
+            segundaCarta = null;
+            bloqueo = false;
+        }, 900);
+    }
+}
+
+iniciarJuego();
+</script>
+
+</body>
+</html>
